@@ -15,6 +15,7 @@ router.get("/health", (req, res) => {
 
 function app(req, res) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
+  console.log("2.1");
 
   router.handel(req, res);
 }
