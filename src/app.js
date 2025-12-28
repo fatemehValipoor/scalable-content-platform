@@ -1,32 +1,22 @@
-const { parse } = require("node:url");
+const { createRouter } = require("./core/router");
 
-/**
- * @param {IncomingMessage} req
- * @param {ServerResponse} res
- */
-function app(req, res) {
-  res.setHeader("Content-Type", "application/json; charset=utf-8");
-  const method = req.method;
-  const { pathname } = parse(req.url, true);
+const router = createRouter();
 
-  if (method === "GET" && pathname === "/health") {
-    res.statusCode = 200;
-    res.end(
-      JSON.stringify({
-        status: "ok",
-        uptime: process.uptime(),
-        timestamp: Date.now(),
-      })
-    );
-    return;
-  }
-  res.statusCode = 404;
+router.get("/health", (req, res) => {
+  res.statusCode = 200;
   res.end(
     JSON.stringify({
-      error: "Not Found",
-      path: pathname,
+      status: "ok",
+      uptime: process.uptime(),
+      timestamp: Date.now(),
     })
   );
+});
+
+function app(req, res) {
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
+
+  router.handel(req, res);
 }
 
 module.exports = app;
