@@ -1,0 +1,24 @@
+{
+  "name": "scalable-content-platform",
+  "version": "0.1.0",
+  "description": "A scalable backend platform built with raw Node.js to explore system design, scalability, and backend architecture concepts.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatemehValipoor/scalable-content-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fatemehValipoor/scalable-content-platform/issues"
+  },
+  "homepage": "https://github.com/fatemehValipoor/scalable-content-platform#readme",
+  "author": "Fatemeh Valipoor",
+  "license": "MIT",
+  "private": true
+}
