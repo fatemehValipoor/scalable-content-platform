@@ -1,23 +1,24 @@
-const { createRouter } = require("./core/router");
+const { createRouter } = require("./core/router/router");
+const { sendJson } = require("./core/router/response");
 
 const router = createRouter();
 
+/**
+ * Register routes (LOAD time)
+ */
 router.get("/health", (req, res) => {
-  res.statusCode = 200;
-  res.end(
-    JSON.stringify({
-      status: "ok",
-      uptime: process.uptime(),
-      timestamp: Date.now(),
-    })
-  );
+  sendJson(res, 200, {
+    status: "ok",
+    uptime: process.uptime(),
+    timestamp: Date.now(),
+  });
 });
 
+/**
+ * Application entry (REQUEST time)
+ */
 function app(req, res) {
-  res.setHeader("Content-Type", "application/json; charset=utf-8");
-  console.log("2.1");
-
-  router.handel(req, res);
+  router.handle(req, res);
 }
 
 module.exports = app;
