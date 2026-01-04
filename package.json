@@ -8,7 +8,8 @@
     "dev": "node src/server.js",
     "commit:check": "git-conventional-commits commit-msg-hook",
     "changelog": "git-conventional-commits changelog",
-    "release": "git-conventional-commits version"
+    "release": "git-conventional-commits version",
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=20"
@@ -23,8 +24,5 @@
   "homepage": "https://github.com/fatemehValipoor/scalable-content-platform#readme",
   "author": "Fatemeh Valipoor",
   "license": "MIT",
-  "private": true,
-  "devDependencies": {
-    "git-conventional-commits": "^2.8.0"
-  }
+  "private": true
 }
