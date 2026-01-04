@@ -5,11 +5,7 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "node src/server.js",
-    "commit:check": "git-conventional-commits commit-msg-hook",
-    "changelog": "git-conventional-commits changelog",
-    "release": "git-conventional-commits version",
-    "prepare": "husky install"
+    "dev": "node src/server.js"
   },
   "engines": {
     "node": ">=20"
