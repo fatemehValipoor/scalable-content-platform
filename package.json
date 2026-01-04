@@ -5,7 +5,10 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "node src/server.js"
+    "dev": "node src/server.js",
+    "commit:check": "git-conventional-commits commit-msg-hook",
+    "changelog": "git-conventional-commits changelog",
+    "release": "git-conventional-commits version"
   },
   "engines": {
     "node": ">=20"
@@ -20,5 +23,8 @@
   "homepage": "https://github.com/fatemehValipoor/scalable-content-platform#readme",
   "author": "Fatemeh Valipoor",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "git-conventional-commits": "^2.8.0"
+  }
 }
