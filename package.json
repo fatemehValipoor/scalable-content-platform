@@ -20,5 +20,8 @@
   "homepage": "https://github.com/fatemehValipoor/scalable-content-platform#readme",
   "author": "Fatemeh Valipoor",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "pino": "^10.1.0"
+  }
 }

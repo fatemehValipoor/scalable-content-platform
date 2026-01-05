@@ -1,5 +1,5 @@
 const { parseRequest } = require("./request");
-const { notFound, internalError } = require("./response");
+const { handleError } = require("./errors/error-handler");
 
 function createRouter() {
   const routes = [];
@@ -15,17 +15,17 @@ function createRouter() {
   }
 
   function handle(req, res) {
-    const { method, pathname } = parseRequest(req);
-    const route = findRoute(method, pathname);
-
-    if (!route) {
-      return notFound(res, pathname);
-    }
-
     try {
+      const { method, pathname } = parseRequest(req);
+      const route = findRoute(method, pathname);
+
+      if (!route) {
+        throw new Error("Route not found");
+      }
+
       route.handler(req, res);
-    } catch (error) {
-      internalError(res);
+    } catch (err) {
+      handleError(err, req, res);
     }
   }
 

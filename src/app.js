@@ -7,11 +7,12 @@ const router = createRouter();
  * Register routes (LOAD time)
  */
 router.get("/health", (req, res) => {
-  sendJson(res, 200, {
-    status: "ok",
-    uptime: process.uptime(),
-    timestamp: Date.now(),
-  });
+  throw new Error("Test error");
+  // sendJson(res, 200, {
+  //   status: "ok",
+  //   uptime: process.uptime(),
+  //   timestamp: Date.now(),
+  // });
 });
 
 /**
