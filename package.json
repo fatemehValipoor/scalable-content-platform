@@ -5,7 +5,8 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "node src/server.js"
+    "dev": "node src/server.js",
+    "start:dev": "node src/server.js | pino-pretty --colorize --translateTime \"yyyy-mm-dd HH:MM:ss\" --ignore pid,hostname"
   },
   "engines": {
     "node": ">=20"
@@ -24,5 +25,8 @@
   "dependencies": {
     "pino": "^10.1.0",
     "pino-http": "^11.0.0"
+  },
+  "devDependencies": {
+    "pino-pretty": "^13.1.3"
   }
 }
