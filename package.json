@@ -22,6 +22,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "pino": "^10.1.0"
+    "pino": "^10.1.0",
+    "pino-http": "^11.0.0"
   }
 }
